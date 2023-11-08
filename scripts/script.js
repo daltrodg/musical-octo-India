@@ -12,6 +12,23 @@ $(function () {
     $("#email").val(userJSON.email);
   });
 
+  $("#submitForm").click(function () {
+    //creating variable
+    var userEmail = $("#userEmail").val();
+
+    //test logging
+    console.log("user email = ", userEmail);
+    console.log("you clicked the button");
+
+    //calling string manipulation functions.
+    $("#stringManip1").html(displayEmail(userEmail));
+    
+
+    //Test log
+    console.log(nameLength(userName));
+    console.log(upperCase(userName));
+  });
+
   $("input[type=radio]").on("change", function () {
     // var $this = $(this);
     // if ($this.is(":checked")) alert("a");
@@ -70,3 +87,8 @@ function getWords(letter) {
       return ["please select a letter"];
   }  
 }
+
+const displayEmail = (x) => {
+  let result = "Email: " + userEmail;
+  return result;
+};
